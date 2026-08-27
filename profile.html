@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | Miyo Yoshinaga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FCF2F2;
+    --bg-card: #FCFAF6;
+    --ink: #2A2823;
+    --ink-soft: #6E6A60;
+    --line: #DEDACF;
+    --moss: #4E5D45;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    font-weight:300;
+    line-height:1.9;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 32px;}
+
+  header{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .headerbar{display:flex; justify-content:flex-end; align-items:center;}
+  nav{display:flex; gap:24px; font-size:12px; letter-spacing:0.06em;}
+  nav a{color:var(--ink-soft); position:relative; padding-bottom:4px;}
+  nav a.active{color:var(--ink);}
+  nav a.active::after{
+    content:"";
+    position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--ink-soft);
+  }
+
+  .page-head{
+    min-height:252px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-color:#FFFFFF;
+    background-image:
+      linear-gradient(90deg, transparent 70px, #F4B8C6 70px, #F4B8C6 71px, transparent 71px),
+      linear-gradient(90deg, transparent 74px, #F4B8C6 74px, #F4B8C6 75px, transparent 75px),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, #BFE0F0 27px, #BFE0F0 28px);
+  }
+  .page-head .eyebrow{
+    font-family:"Shippori Mincho", serif;
+    font-size:23px;
+    font-weight:400;
+    letter-spacing:0.2em;
+    color:var(--ink);
+    line-height:28px;
+  }
+
+  .section-label{
+    font-family:"Shippori Mincho", serif;
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:0.25em;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:36px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .profile{
+    padding:72px 0;
+  }
+  .profile-grid{
+    max-width:560px;
+  }
+  .profile-text h2{
+    font-family:"Shippori Mincho", serif;
+    font-weight:400;
+    font-size:17px;
+    margin-bottom:6px;
+  }
+  .profile-text .role{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+    letter-spacing:0.05em;
+  }
+  .profile-text p{
+    font-size:14.5px;
+    color:var(--ink);
+    line-height:2.1;
+    margin-bottom:14px;
+  }
+  .tags{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:20px;
+  }
+  .tag{
+    font-size:11.5px;
+    font-weight:300;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    border-radius:99px;
+    padding:5px 14px;
+  }
+
+  footer{
+    padding:36px 0;
+    border-top:1px solid var(--line);
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap headerbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="works.html">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">PROFILE</div>
+  </div>
+</section>
+
+<section class="profile">
+  <div class="wrap">
+    <div class="profile-grid">
+      <div class="profile-text">
+        <h2>吉永美代</h2>
+        <div class="role">フリーライター / エディター</div>
+        <p>兵庫県生まれ、神奈川県横浜市在住。大阪大学文学部（西洋美術史学専攻）卒業。大阪の出版社、京都の情報誌の編集部での勤務を経て、2013年、横浜への転居を機にフリーランスに。</p>
+        <p>『OZ magazine』『Discover Japan』『料理通信』『クロワッサン』など、雑誌やwebメディアを中心に、食や旅、暮らしの記事を執筆。インタビュー取材と原稿執筆に加え、企画・編集も手がけています。</p>
+        <p>無記名記事のため具体的にご紹介できませんが、企業サイトやオウンドメディアも担当させていただいております。</p>
+        <div class="tags">
+          <span class="tag">料理</span>
+          <span class="tag">製菓・製パン</span>
+          <span class="tag">ワイン</span>
+          <span class="tag">日本酒</span>
+          <span class="tag">器</span>
+          <span class="tag">インテリア</span>
+          <span class="tag">アート</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Miyo Yoshinaga</div>
+</footer>
+
+</body>
+</html>

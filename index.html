@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miyo Yoshinaga | ライター・エディター</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FCF2F2;
+    --bg-card: #FCFAF6;
+    --ink: #2A2823;
+    --ink-soft: #6E6A60;
+    --line: #DEDACF;
+    --seal: #B0472F;
+    --moss: #4E5D45;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    font-weight:300;
+    line-height:1.9;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 32px;}
+
+  header{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .headerbar{display:flex; justify-content:flex-end; align-items:center;}
+  nav{display:flex; gap:24px; font-size:12px; letter-spacing:0.06em;}
+  nav a{color:var(--ink-soft); position:relative; padding-bottom:4px;}
+  nav a.active{color:var(--ink);}
+  nav a.active::after{
+    content:"";
+    position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--ink-soft);
+  }
+
+  .hero{
+    padding:28px 0 28px;
+    text-align:center;
+    background-color:#FFFFFF;
+    background-image:
+      linear-gradient(90deg, transparent 70px, #F4B8C6 70px, #F4B8C6 71px, transparent 71px),
+      linear-gradient(90deg, transparent 74px, #F4B8C6 74px, #F4B8C6 75px, transparent 75px),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, #BFE0F0 27px, #BFE0F0 28px);
+  }
+  .hero h1{
+    font-family:"Shippori Mincho", serif;
+    font-size:23px;
+    font-weight:400;
+    letter-spacing:0.08em;
+    line-height:28px;
+    margin-bottom:28px;
+  }
+  .hero .name-jp{
+    font-family:"Shippori Mincho", serif;
+    font-size:17px;
+    font-weight:400;
+    color:var(--ink-soft);
+    letter-spacing:0.15em;
+    line-height:28px;
+    margin-bottom:28px;
+  }
+  .hero .kana{
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.2em;
+    line-height:28px;
+    margin-bottom:28px;
+  }
+  .hero p{
+    max-width:480px;
+    margin:0 auto;
+    font-size:15px;
+    color:var(--ink-soft);
+    line-height:28px;
+  }
+
+  .section-label{
+    font-family:"Shippori Mincho", serif;
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:0.25em;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:36px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  .profile{
+    padding:72px 0;
+    border-top:1px solid var(--line);
+  }
+  .profile-grid{
+    max-width:560px;
+  }
+  .profile-text h2{
+    font-family:"Shippori Mincho", serif;
+    font-weight:400;
+    font-size:17px;
+    margin-bottom:6px;
+  }
+  .profile-text .role{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+    letter-spacing:0.05em;
+  }
+  .profile-text p{
+    font-size:14.5px;
+    color:var(--ink);
+    line-height:2.1;
+    margin-bottom:14px;
+  }
+  .profile-text p.note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.9;
+    margin-top:-4px;
+  }
+  .tags{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:20px;
+  }
+  .tag{
+    font-size:11.5px;
+    font-weight:300;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    border-radius:99px;
+    padding:5px 14px;
+  }
+
+  .works{
+    padding:72px 0 96px;
+    border-top:1px solid var(--line);
+  }
+  .work-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .work-item{
+    display:grid;
+    grid-template-columns:108px 100px 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    transition:opacity 0.2s ease;
+  }
+  a.work-item{
+    display:grid;
+    color:inherit;
+  }
+  a.work-item:hover{
+    opacity:0.7;
+  }
+  .work-item .thumb{
+    width:108px; height:144px;
+    border-radius:4px;
+    background:#EFEAE0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:10px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+    overflow:hidden;
+  }
+  .work-item .thumb img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .work-item .date{
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+  .work-item .title{
+    font-size:14px;
+    font-weight:300;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  .work-item .cat{
+    font-size:11px;
+    font-weight:300;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    letter-spacing:0.05em;
+  }
+
+  .pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:40px;
+  }
+  .pagination button{
+    font-family:"Shippori Mincho", serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:50%;
+    width:32px;
+    height:32px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .pagination button:hover{
+    border-color:var(--ink-soft);
+  }
+  .pagination button.active{
+    background:var(--ink);
+    color:#FFFFFF;
+    border-color:var(--ink);
+  }
+  .pagination button.arrow{
+    border:none;
+    font-size:16px;
+  }
+  .pagination button:disabled{
+    opacity:0.3;
+    cursor:default;
+  }
+
+  footer{
+    padding:36px 0;
+    border-top:1px solid var(--line);
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap headerbar">
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="works.html">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Miyo Yoshinaga</h1>
+    <div class="name-jp">吉永美代</div>
+    <div class="kana">ライター / エディター</div>
+    <p>食、旅、暮らしのテーマを中心に、<br>雑誌やwebメディアの記事を手がけています。</p>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="wrap">
+    <div class="section-label">WORKS</div>
+    <div class="work-list">
+      <a class="work-item" href="works/work01.html">
+        <div class="thumb"><img src="images/work_oz2607.jpg" alt=""></div>
+        <div class="date">2026.07</div>
+        <div class="title">OZ magazine 2026年8・9月号「文具と雑貨」特集</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work02.html">
+        <div class="thumb"><img src="images/work_dj2605.jpg" alt=""></div>
+        <div class="date">2026.05</div>
+        <div class="title">Discover Japan 2026年6月号「名宿・一流ホテルでかなえる養生のススメ」</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work03.html">
+        <div class="thumb"><img src="images/work_oz2605.jpg" alt=""></div>
+        <div class="date">2026.05</div>
+        <div class="title">OZ magazine 2026年6・7月号「ごきげん鎌倉さんぽ」特集</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work04.html">
+        <div class="thumb"><img src="images/work_2604ANA.jpg" alt=""></div>
+        <div class="date">2026.04</div>
+        <div class="title">「ANA FINDSメディア」CAさんおすすめギフトご紹介記事</div>
+        <div class="cat">企業メディア</div>
+      </a>
+      <a class="work-item" href="works/work05.html">
+        <div class="thumb"><img src="images/work_oz2603.jpg" alt=""></div>
+        <div class="date">2026.03</div>
+        <div class="title">OZ magazine 2026年4・5月号「横浜の歩き方」特集</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work06.html">
+        <div class="thumb"><img src="images/work_2603ANA.jpg" alt=""></div>
+        <div class="date">2026.03</div>
+        <div class="title">「ANA FINDSメディア」CAさんおすすめグルメご紹介記事</div>
+        <div class="cat">企業メディア</div>
+      </a>
+      <a class="work-item" href="works/work07.html">
+        <div class="thumb"><img src="images/work_2602matsuya.jpg" alt=""></div>
+        <div class="date">2026.02</div>
+        <div class="title">松屋銀座様100周年特設サイト・社長様インタビューほか</div>
+        <div class="cat">企業メディア</div>
+      </a>
+      <a class="work-item" href="works/work08.html">
+        <div class="thumb"><img src="images/work_dj2602.jpg" alt=""></div>
+        <div class="date">2026.02</div>
+        <div class="title">Discover Japan 2026年3月号「建築でめぐる敦賀・若狭の旅」</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work09.html">
+        <div class="thumb"><img src="images/work_oz2601.jpg" alt=""></div>
+        <div class="date">2026.01</div>
+        <div class="title">OZ magazine 2026年2・3月号「お茶とおやつ」特集</div>
+        <div class="cat">雑誌</div>
+      </a>
+      <a class="work-item" href="works/work10.html">
+        <div class="thumb"><img src="images/work_2601ANA.jpg" alt=""></div>
+        <div class="date">2026.01</div>
+        <div class="title">「ANA FINDSメディア」CAさんおすすめバッグご紹介記事</div>
+        <div class="cat">企業メディア</div>
+      </a>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Miyo Yoshinaga</div>
+</footer>
+
+<script>
+(function(){
+  var ITEMS_PER_PAGE = 5;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.work-list > .work-item'));
+  var pagination = document.getElementById('pagination');
+  var totalPages = Math.max(1, Math.ceil(items.length / ITEMS_PER_PAGE));
+  var currentPage = 1;
+
+  function showPage(page){
+    currentPage = page;
+    items.forEach(function(item, i){
+      var itemPage = Math.floor(i / ITEMS_PER_PAGE) + 1;
+      item.style.display = (itemPage === page) ? '' : 'none';
+    });
+    renderPagination();
+  }
+
+  function renderPagination(){
+    pagination.innerHTML = '';
+    if (totalPages <= 1) return;
+
+    var prev = document.createElement('button');
+    prev.textContent = '‹';
+    prev.className = 'arrow';
+    prev.disabled = currentPage === 1;
+    prev.addEventListener('click', function(){ showPage(currentPage - 1); });
+    pagination.appendChild(prev);
+
+    for (var p = 1; p <= totalPages; p++){
+      (function(p){
+        var btn = document.createElement('button');
+        btn.textContent = p;
+        if (p === currentPage) btn.classList.add('active');
+        btn.addEventListener('click', function(){ showPage(p); });
+        pagination.appendChild(btn);
+      })(p);
+    }
+
+    var next = document.createElement('button');
+    next.textContent = '›';
+    next.className = 'arrow';
+    next.disabled = currentPage === totalPages;
+    next.addEventListener('click', function(){ showPage(currentPage + 1); });
+    pagination.appendChild(next);
+  }
+
+  showPage(1);
+})();
+</script>
+
+</body>
+</html>
