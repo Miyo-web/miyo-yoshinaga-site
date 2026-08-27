@@ -242,12 +242,30 @@
   footer{
     padding:36px 0;
     border-top:1px solid var(--line);
-    text-align:center;
     font-size:12px;
     color:var(--ink-soft);
     letter-spacing:0.05em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+  }
+  footer a{
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+  }
+  footer a:hover{
+    border-bottom-color:var(--ink-soft);
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1W17ZEKRN6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1W17ZEKRN6');
+</script>
 </head>
 <body>
 
@@ -341,7 +359,10 @@
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Miyo Yoshinaga</div>
+  <div class="wrap" style="display:flex; justify-content:center; align-items:center; gap:16px;">
+    <span>© 2026 Miyo Yoshinaga</span>
+    <a href="privacy-policy/">Privacy Policy</a>
+  </div>
 </footer>
 
 <script>
